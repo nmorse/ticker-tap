@@ -5,19 +5,19 @@ let chart;
 
 async function fetchHistory(symbol)
 {
-    return [{date: "2026-02-01", close: 10}, 
-            {date: "2026-03-01", close: 20}, 
-            {date: "2026-04-01", close: 0}, 
-            {date: "2026-05-01", close: 15}]
-    //   // https://stooq.com/q/d/l/?s=aapl.us&i=d&apikey=i3JN9ah5dWOKsc2SfbUwMyxemp61GV7Z
-    // const url =
-    //   `https://stooq.com/q/d/l/?s=${symbol.toLowerCase()}.us&i=d&apikey=i3JN9ah5dWOKsc2SfbUwMyxemp61GV7Z`;
+    // return [{date: "2026-02-01", close: 10}, 
+    //         {date: "2026-03-01", close: 20}, 
+    //         {date: "2026-04-01", close: 0}, 
+    //         {date: "2026-05-01", close: 15}]
+      // https://stooq.com/q/d/l/?s=aapl.us&i=d&apikey=i3JN9ah5dWOKsc2SfbUwMyxemp61GV7Z
+    const url =
+      `https://stooq.com/q/d/l/?s=${symbol.toLowerCase()}.us&i=d&apikey=i3JN9ah5dWOKsc2SfbUwMyxemp61GV7Z`;
 
-    // const csv =
-    //   await fetch(url)
-    //   .then(r => r.text());
+    const csv =
+      await fetch(url)
+      .then(r => r.text());
 
-    // return parseCSV(csv);
+    return parseCSV(csv);
 }
 
 let history = []
@@ -466,10 +466,10 @@ function renderChart(
                 datasets
             },
 
-            options: {
-                parsing: false,
-                responsive: true
-            }
+            // options: {
+            //     parsing: false,
+            //     responsive: true
+            // }
         }
     );
 }
