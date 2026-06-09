@@ -46,7 +46,7 @@ function createProjectionLine(
     return chartDates.map(date => {
 
         const years =
-            (date - startDate) /
+            (Date(date) - Date(startDate)) /
             (365.25 * 24 * 3600 * 1000);
 
         return {
